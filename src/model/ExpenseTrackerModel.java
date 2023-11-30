@@ -84,7 +84,7 @@ public class ExpenseTrackerModel {
       return false;
     }
     listeners.add(listener);
-    return false;
+    return true;
   }
 
   public int numberOfListeners() {
