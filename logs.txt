@@ -1,0 +1,29 @@
+commit 2bfffa09b835a41dae5461caa6162515acbc8ef2
+Author: SmruthiSathyamoorthy <smruthi.sathyamoorthy@gmail.com>
+Date:   Mon Dec 4 16:00:48 2023 -0500
+
+    Added java doc
+
+commit 94ed60402e9455f85f55001418ad827b4bc69fc0
+Author: sudharshan1234 <sudarchakra2000@gmail.com>
+Date:   Wed Nov 29 21:13:58 2023 -0500
+
+    Fixed register method in the model
+
+commit 7e88f0fba9170249b8cf54d182d26376bdb5ee0b
+Author: sudharshan1234 <sudarchakra2000@gmail.com>
+Date:   Wed Nov 29 21:09:48 2023 -0500
+
+    Completed TODOs in Model
+
+commit f3ac3433823bfcb680708ca2a46623aab5bb7c90
+Author: SmruthiSathyamoorthy <smruthi.sathyamoorthy@gmail.com>
+Date:   Wed Nov 29 21:08:47 2023 -0500
+
+    Removed direct view updates from controller
+
+commit 7b93c7c26eeb178207fad1f6abfe61d6dc51d2d0
+Author: sudharshan1234 <sudarchakra2000@gmail.com>
+Date:   Tue Nov 28 20:13:26 2023 -0500
+
+    initial commit
