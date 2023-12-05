@@ -6,6 +6,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * The ExpenseTrackerModel class represents the model part of the MVC pattern
+ * for an expense tracker application.
+ * It manages the transactions and notifies registered listeners about state
+ * changes.
+ */
 public class ExpenseTrackerModel {
 
   // encapsulation - data integrity
@@ -15,12 +21,21 @@ public class ExpenseTrackerModel {
 
   // This is applying the Observer design pattern.
   // Specifically, this is the Observable class.
-
+  /**
+   * Constructor for ExpenseTrackerModel.
+   * Initializes the list of transactions and matched filter indices.
+   */
   public ExpenseTrackerModel() {
     transactions = new ArrayList<Transaction>();
     matchedFilterIndices = new ArrayList<Integer>();
   }
 
+  /**
+   * Adds a transaction to the expense tracker.
+   *
+   * @param t The Transaction to be added.
+   * @throws IllegalArgumentException if the transaction is null.
+   */
   public void addTransaction(Transaction t) {
     // Perform input validation to guarantee that all transactions added are
     // non-null.
@@ -33,6 +48,11 @@ public class ExpenseTrackerModel {
     stateChanged();
   }
 
+  /**
+   * Removes a transaction from the expense tracker.
+   *
+   * @param t The Transaction to be removed.
+   */
   public void removeTransaction(Transaction t) {
     transactions.remove(t);
     // The previous filter is no longer valid.
@@ -40,11 +60,24 @@ public class ExpenseTrackerModel {
     stateChanged();
   }
 
+  /**
+   * Retrieves an unmodifiable list of transactions.
+   *
+   * @return An unmodifiable list of transactions.
+   */
   public List<Transaction> getTransactions() {
     // encapsulation - data integrity
     return Collections.unmodifiableList(new ArrayList<>(transactions));
   }
 
+  /**
+   * Sets the list of indices that match a certain filter.
+   *
+   * @param newMatchedFilterIndices A List of integers representing matched filter
+   *                                indices.
+   * @throws IllegalArgumentException if the list is null or contains invalid
+   *                                  indices.
+   */
   public void setMatchedFilterIndices(List<Integer> newMatchedFilterIndices) {
     // Perform input validation
     if (newMatchedFilterIndices == null) {
@@ -62,6 +95,11 @@ public class ExpenseTrackerModel {
     stateChanged();
   }
 
+  /**
+   * Retrieves a copy of the list of matched filter indices.
+   *
+   * @return A list of integers representing matched filter indices.
+   */
   public List<Integer> getMatchedFilterIndices() {
     // For encapsulation, copy out the output list
     List<Integer> copyOfMatchedFilterIndices = new ArrayList<Integer>();
@@ -87,18 +125,32 @@ public class ExpenseTrackerModel {
     return true;
   }
 
+  /**
+   * Returns the number of registered listeners.
+   *
+   * @return The number of listeners.
+   */
   public int numberOfListeners() {
     // For testing, this is one of the methods.
     //
     return listeners.size();
   }
 
+  /**
+   * Checks if a listener is already registered.
+   *
+   * @param listener The listener to check.
+   * @return true if the listener is registered, otherwise false.
+   */
   public boolean containsListener(ExpenseTrackerModelListener listener) {
     // For testing, this is one of the methods.
     //
     return listeners.contains(listener);
   }
 
+  /**
+   * Notifies all registered listeners about a state change.
+   */
   protected void stateChanged() {
     // For the Observable class, this is one of the methods.
     //
